@@ -1,0 +1,290 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    padding: 8px;
+    background-color: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    transition: background-color 200ms ease, color 200ms ease;
+}
+
+.site-header {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    min-height: 64px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 6%;
+    background-color: lightpink;
+}
+
+.logo {
+    display: grid;
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+    place-items: center;
+    border-radius: 50%;
+    background-color: oldlace;
+    color: black;
+    font-size: 23px;
+    text-decoration: none;
+}
+
+.site-header nav {
+    margin: 0 auto;
+}
+
+.site-header ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.site-header nav a {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.site-header nav a:hover,
+.site-header nav a:focus-visible {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.header-button {
+    padding: 5px 12px;
+    border-radius: 7px;
+    background-color: steelblue;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.hero {
+    position: relative;
+    display: grid;
+    min-height: 420px;
+    overflow: hidden;
+    place-items: center;
+    background-color: lightcoral;
+}
+
+.hero-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    inset: 0;
+    object-fit: cover;
+    object-position: center 45%;
+}
+
+.hero-card {
+    position: relative;
+    width: min(440px, calc(100% - 36px));
+    padding: 24px;
+    border-radius: 9px;
+    background-color: white;
+    opacity: 0.9;
+    text-align: center;
+}
+
+.hero-card h1 {
+    margin-bottom: 12px;
+    font-size: clamp(20px, 3vw, 27px);
+}
+
+.hero-card p {
+    margin-bottom: 18px;
+    color: dimgray;
+    font-size: 14px;
+}
+
+.button {
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 7px;
+    background-color: crimson;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.button:hover,
+.button:focus-visible {
+    background-color: firebrick;
+}
+
+.gallery {
+    padding: 48px 6%;
+    background-color: mistyrose;
+}
+
+.gallery-grid {
+    display: grid;
+    max-width: 1120px;
+    margin: 0 auto;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    align-items: center;
+    justify-items: center;
+    gap: 28px;
+}
+
+.gallery-grid img {
+    width: min(100%, 190px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.site-footer {
+    display: grid;
+    min-height: 170px;
+    padding: 20px 6%;
+    background-color: dimgray;
+    color: white;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 36px;
+}
+
+.footer-logo {
+    align-self: start;
+}
+
+.site-footer h2 {
+    margin-bottom: 8px;
+    color: white;
+    font-size: 16px;
+}
+
+.site-footer p {
+    margin-bottom: 5px;
+    color: gainsboro;
+    font-size: 12px;
+}
+
+.theme-toggle {
+    margin-top: 6px;
+    padding: 6px 12px;
+    border: 0;
+    border-radius: 6px;
+    background-color: lightgray;
+    color: black;
+    cursor: pointer;
+    font: inherit;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.dark-theme {
+    background-color: black;
+    color: white;
+}
+
+.dark-theme .gallery {
+    background-color: darkslategray;
+}
+
+.dark-theme .hero-card {
+    background-color: dimgray;
+    color: white;
+}
+
+.dark-theme .hero-card p {
+    color: gainsboro;
+}
+
+@media (max-width: 700px) {
+    .site-header {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .site-header nav {
+        order: 3;
+        width: 100%;
+    }
+
+    .site-header ul {
+        gap: 10px 18px;
+    }
+
+    .hero {
+        min-height: 360px;
+    }
+
+    .gallery {
+        padding: 32px 5%;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .gallery-grid img {
+        width: min(100%, 160px);
+    }
+
+    .site-footer {
+        grid-template-columns: 1fr 2fr;
+        gap: 22px;
+    }
+
+    .footer-contact {
+        grid-column: 2;
+    }
+}
+
+@media (max-width: 420px) {
+    body {
+        padding: 0;
+    }
+
+    .site-header {
+        padding: 10px 16px;
+    }
+
+    .site-header ul {
+        gap: 8px 14px;
+    }
+
+    .site-header nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        min-height: 330px;
+    }
+
+    .hero-card {
+        padding: 18px;
+    }
+
+    .site-footer {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .footer-contact {
+        grid-column: auto;
+    }
+}

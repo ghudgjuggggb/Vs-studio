@@ -1,1 +1,75 @@
 <!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="lightpink">
+    <title>პანდების სამყარო</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="site-header">
+        <a class="logo" href="#home" aria-label="მთავარი გვერდი">🐼</a>
+        <nav aria-label="მთავარი ნავიგაცია">
+            <ul>
+                <li><a href="#home">მთავარი</a></li>
+                <li><a href="#about">პანდების შესახებ</a></li>
+                <li><a href="#contact">კონტაქტი</a></li>
+            </ul>
+        </nav>
+        <a class="header-button" href="#contact">გაიგეთ მეტი</a>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <img class="hero-image"
+                 src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&amp;fit=crop&amp;w=1600&amp;q=85"
+                 alt="გიგანტური პანდა"
+                 fetchpriority="high">
+            <div class="hero-card">
+                <h1>გაიცანით პანდების სამყარო</h1>
+                <p>პანდები ჩინეთის მთიან ტყეებში ბინადრობენ და უმეტესად ბამბუკით იკვებებიან. გაიგეთ მეტი ამ უნიკალური ცხოველებისა და მათი დაცვის შესახებ.</p>
+                <a class="button" href="#about">პანდების შესახებ</a>
+            </div>
+        </section>
+
+        <section id="gallery" class="gallery" aria-label="პანდების ფოტოები">
+            <div class="gallery-grid">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Giant_panda_at_Vienna_Zoo.jpg?width=400"
+                     alt="პანდა ზოოპარკში" loading="lazy">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Giant_Panda_at_Chengdu_Panda_Base.jpg?width=400"
+                     alt="პანდა ჩენგდუს პანდების ბაზაში" loading="lazy">
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Giant_Panda_eating_Bamboo.JPG?width=400"
+                     alt="პანდა ბამბუკს ჭამს" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1564349683136-77e08dba1ef7?auto=format&amp;fit=crop&amp;w=400&amp;h=400&amp;q=80"
+                     alt="გიგანტური პანდა" loading="lazy">
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="site-footer">
+        <a class="logo footer-logo" href="#home" aria-label="გვერდის დასაწყისში დაბრუნება">🐼</a>
+        <section id="about" class="footer-about">
+            <h2>პანდების შესახებ</h2>
+            <p>გიგანტური პანდა იშვიათი დათვისებრთა ოჯახის წარმომადგენელია. მისი ბუნებრივი გარემოს დაცვა ამ სახეობის გადარჩენისთვის მნიშვნელოვანია.</p>
+        </section>
+        <section class="footer-contact">
+            <h2>საინტერესო ფაქტები</h2>
+            <p>საცხოვრებელი გარემო: ჩინეთის მთიანი ტყეები</p>
+            <p>საყვარელი საკვები: ბამბუკი</p>
+            <p>ოჯახი: დათვისებრნი</p>
+            <button class="theme-toggle" type="button" aria-pressed="false">მუქი თემა</button>
+        </section>
+    </footer>
+
+    <script>
+        const themeToggle = document.querySelector(".theme-toggle");
+
+        themeToggle.addEventListener("click", () => {
+            const isDark = document.body.classList.toggle("dark-theme");
+            themeToggle.setAttribute("aria-pressed", String(isDark));
+            themeToggle.textContent = isDark ? "ღია თემა" : "მუქი თემა";
+        });
+    </script>
+</body>
+</html>
